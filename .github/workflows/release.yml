@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      
+
 permissions:
   contents: write
 
@@ -28,19 +28,26 @@ jobs:
         version=$(node -e "console.log(require('./vertion.json').vertion)")
         echo "Current version: $version"
         
-        # Séparer en majeur et mineur
-        IFS='.' read -r major minor <<< "$version"
+        # Supprimer le 'V' et séparer en majeur, mineur et patch
+        version_numbers=${version#V}
+        IFS='.' read -r major minor patch <<< "$version_numbers"
         
-        # Incrémenter le mineur
-        minor=$((minor + 1))
+        # Incrémenter le patch
+        patch=$((patch + 1))
         
-        # Si le mineur > 99, reset à 0 et incrémenter le majeur
-        if [ $minor -gt 99 ]; then
+        # Si le patch > 9, reset patch et incrémenter le mineur
+        if [ $patch -gt 9 ]; then
+          patch=0
+          minor=$((minor + 1))
+        fi
+        
+        # Si le mineur > 9, reset mineur et incrémenter le majeur
+        if [ $minor -gt 9 ]; then
           minor=0
           major=$((major + 1))
         fi
         
-        new_version="$major.$minor"
+        new_version="V$major.$minor.$patch"
         echo "New version: $new_version"
         
         # Mettre à jour vertion.json
