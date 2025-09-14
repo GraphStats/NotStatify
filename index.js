@@ -28,7 +28,7 @@ Discord.DefaultWebSocketManagerOptions.identifyProperties.browser = 'Discord And
 Discord.DefaultWebSocketManagerOptions.identifyProperties.device  = 'Discord Android';
 Discord.DefaultWebSocketManagerOptions.identifyProperties.os      = process.platform;
 
-const TOKEN = process.env.TOKEN1;
+const TOKEN = process.env.TOKEN;
 const CLIENT_ID = process.env.CLIENT_ID;
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 const LOG_CHANNEL_ID = process.env.LOG_CHANNEL_ID;
