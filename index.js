@@ -151,7 +151,8 @@ const versionData = {
     'Giveaway System',
     'Poll System',
     'Server Backup',
-    'Advanced Logging'
+    'Advanced Logging',
+    'Dash'
   ]
 };
 
