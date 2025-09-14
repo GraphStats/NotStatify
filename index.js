@@ -135,7 +135,7 @@ const client = new Client({
 
 // Version configuration
 const versionData = { 
-  version: '5.1.0',
+  version: '5.2.0',
   features: [
     'YouTube Stats Tracking',
     'Moderation Tools',
