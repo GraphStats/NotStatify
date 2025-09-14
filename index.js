@@ -43,7 +43,6 @@ const RULES_CHANNEL_ID = process.env.RULES_CHANNEL_ID || '1389617547359289364';
 const RULES_MESSAGE_ID = process.env.RULES_MESSAGE_ID || '1380823315509280819';
 const RULES_ROLE_ID = process.env.RULES_ROLE_ID || '1378060554144583833';
 
-// Services for status monitoring
 const services = [
   { name: 'DockyCount', url: 'https://dockycount.vercel.app' }
 ];
